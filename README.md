@@ -1,6 +1,6 @@
 ﻿# EasyBertVits2
 
-文章から感情豊かな音声を生成する [Bert-VITS2](https://github.com/fishaudio/Bert-VITS2) を簡単に使えます。<br>主に litagin さんの [Bert-VITS2 (ver 2.1, 2.2) の学習方法（2023-12-01）](https://zenn.dev/litagin/articles/b1ddc1da5ea2b3) を自動化したものです。
+文章から感情豊かな音声を生成する [Bert-VITS2](https://github.com/fishaudio/Bert-VITS2) を簡単に使えます。<br>主に litagin さんの  [Bert-VITS2 (ver 2.1, 2.2) の学習方法（2023-12-01）](https://zenn.dev/litagin/articles/b1ddc1da5ea2b3)を自動化したものです。
 
 サンプル音声は[こちら](https://twitter.com/Zuntan03/status/1735947687466557733)。
 
@@ -13,10 +13,10 @@
 	- ファイルの配布元を `Ctrl + Click` で確認して、問題がなければ `y` と `Enter` を入力してください。
 2. インストールが終わると `Hiyori UI` が Web ブラウザに表示されますので、**ブラウザの翻訳機能で日本語化します**（例はChrome で右クリックから `日本語に翻訳`）。<br>![HiyoriUi](./doc/img/HiyoriUi.png)
 3. 右上の `モデルのロード` の下の欄をクリックして、[JVNV](https://sites.google.com/site/shinnosuketakamichi/research-topics/jvnv_corpus) の学習済みモデル `G_JVNV-F2-10000.pth` を選択します。<br>![HiyoriUiModel](./doc/img/HiyoriUiModel.png)
-	- `Download-DemoModel.bat` で異なる学習ステップ数のモデルを追加でダウンロードできます。<br>複数のモデルを選択して、生成された音声を聴き比べることもできます。
+	- `Download-DemoModel.bat` で学習ステップ数の異なるモデルを追加でダウンロードできます。<br>複数のモデルを選択して、生成された音声を聴き比べることもできます。
 4. モデル選択欄の右側の `ZH` を **2 番めの `日本`** （選択後に `JP` に変わります）にして `モデルをロードする` をします。<br>![HiyoriUiModelJa](./doc/img/HiyoriUiModelJa.png)
-5. 画面下にロードされたモデルが表示されますので、**右上のトグルを有効にします** 。<br>![HiyoriUiModelEnable](./doc/img/HiyoriUiModelEnable.png)
-6. `テキストコンテンツを入力してください` にテキストを入力して、`音声を生成する` で生成します。<br>![HiyoriUiText](./doc/img/HiyoriUiText.png)
+5. ロードされたモデルが画面下に表示されますので、**右上のトグルを有効にします** 。<br>![HiyoriUiModelEnable](./doc/img/HiyoriUiModelEnable.png)
+6. `テキストコンテンツを入力してください` に文章を入力して、`音声を生成する` で生成します。<br>![HiyoriUiText](./doc/img/HiyoriUiText.png)
 7. 音声は下部のモデル別に生成され、再生やダウンロードができます。複数のモデルで同時に生成して、聴き比べることもできます。<br>![HiyoriUiGen](./doc/img/HiyoriUiGen.png)
 	- 文章の内容で感情表現が大きく変化します。以下のサンプル文章で生成を試してみてください。
 		- ずっとずっと好きでした! 私とお付き合いしてください。お願いします！
