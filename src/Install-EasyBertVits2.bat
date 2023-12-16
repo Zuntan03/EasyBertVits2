@@ -9,7 +9,7 @@ if not exist %CURL_CMD% (
 	pause & popd & exit /b 1
 )
 
-set EASY_BERT_VITS2_DIR=EasyBertVits2-v2.1
+set EASY_BERT_VITS2_DIR=EasyBertVits2-2.1
 
 if not exist lib\ ( mkdir lib )
 if not exist lib\%EASY_BERT_VITS2_DIR%\ (
@@ -25,8 +25,6 @@ if not exist lib\%EASY_BERT_VITS2_DIR%\ (
 )
 
 robocopy .\lib\%EASY_BERT_VITS2_DIR%\ . /s
-start cmd /c src\Setup.bat
-
-start HiyoriUi.bat
+start src\Setup.bat
 
 popd rem %~dp0..
