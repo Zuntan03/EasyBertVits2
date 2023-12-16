@@ -138,4 +138,6 @@ if not exist Bert-VITS2\Data\Demo-JVNV\G_JVNV-F2-10000.pth (
 	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 )
 
+start HiyoriUi.bat
+
 popd rem %~dp0..
