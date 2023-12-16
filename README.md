@@ -8,7 +8,7 @@
 
 最近のNVIDIA製ビデオカード（VRAM 8GB以上）を搭載した、管理者権限のある Windows PC で動作します。<br>Git や Python は不要です。
 
-1. [Releases](https://github.com/Zuntan03/EasyBertVits2/releases) から [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/raw/v2.1/src/Install-EasyBertVits2.bat) をダウンロードして、インストール先のフォルダ **（スペースを含まない英数字のみの浅いパス）** で実行します。
+1. [Releases](https://github.com/Zuntan03/EasyBertVits2/releases) から [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/raw/v2.1/src/Install-EasyBertVits2.bat)（←を右クリックから保存も可） をダウンロードして、インストール先のフォルダ **（スペースを含まない英数字のみの浅いパス）** で実行します。
 	- **「WindowsによってPCが保護されました」と表示されたら、「詳細表示」から「実行」します。**
 2. インストールが終わると `Hiyori UI` が Web ブラウザに表示されますので、**ブラウザの翻訳機能で日本語化します**（例はChrome で右クリックから `日本語に翻訳`）。<br>![HiyoriUi](./doc/img/HiyoriUi.png)
 3. 右上の `モデルのロード` の下の欄をクリックして、[JVNV](https://sites.google.com/site/shinnosuketakamichi/research-topics/jvnv_corpus) の学習済みモデル `G_JVNV-F2-10000.pth` を選択します。<br>![HiyoriUiModel](./doc/img/HiyoriUiModel.png)
