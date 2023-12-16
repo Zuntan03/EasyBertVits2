@@ -1,0 +1,169 @@
+﻿# グローバル設定
+# 2 つの GPU で 2 つのトレーニング セットを同時に実行するなど、複数の設定ファイルを同時に使用する場合: 環境変数を使用して設定ファイルを指定します。指定しない場合、デフォルトは ./config.yml です。
+
+# 共通のパス設定を提供し、データが無秩序に配置されるのを避けるためにデータを均一に保存します。
+# 各データセットとそれに対応するモデルは統一されたパスの下に保存され、後続のすべてのパス設定は datasetPath に対する相対パスになります。
+# 空白のままにした場合、パスはプロジェクトのルート ディレクトリを基準にした相対パスになります。
+dataset_path: "Data/{SPEAKER_NAME}/"
+
+# モデルミラーソース、デフォルトはHuggingFace、openi ミラーソースを使用するには、openi_token を指定する必要があります
+mirror: ""
+openi_token: ""  # openi トークン
+
+# resample オーディオのリサンプリング設定
+# 注意「:」の後にはスペースが必要であることに注意してください。
+resample:
+  # 目標リサンプリングレート
+  sampling_rate: 44100
+  # オーディオ ファイル入力パス。リサンプリングすると、このパスにあるすべての .wav オーディオ ファイルがリサンプリングされます。
+  # datasetPath からの相対パスを入力してください
+  in_dir: "audios/raw" # ルートディレクトリからの相対パスは /datasetPath/in_dir
+  # リサンプリング後の音声ファイルの出力パス
+  out_dir: "audios/wavs"
+
+
+# preprocess_text データセットの前処理関連の設定
+# 注意「:」の後にはスペースが必要であることに注意してください。
+preprocess_text:
+  # 元のテキスト ファイルのパス。テキスト形式は次のとおりです。{wav_path}|{speaker_name}|{language}|{text}。
+  transcription_path: "filelists/esd.list"
+  # データクリーニング後のテキストパスは入力する必要はありません。 空白のままにすると、元のテキスト ディレクトリに生成されます。
+  cleaned_path: ""
+  # トレーニングセットのパス
+  train_path: "filelists/train.list"
+  # 検証セットのパス
+  val_path: "filelists/val.list"
+  # 設定ファイルのパス
+  config_path: "config.json"
+  # 各話者の検証セットエントリの数
+  val_per_spk: 4
+  # 検証セット内のエントリの最大数。それ以上のエントリがあるものは切り捨てられ、トレーニング セットに配置されます。
+  max_val_total: 12
+  # データクリーニングを行うかどうか
+  clean: true
+
+
+# bert_gen 関連の設定
+# 注意「:」の後にはスペースが必要であることに注意してください。
+bert_gen:
+  # トレーニング データセット設定ファイルのパス
+  config_path: "config.json"
+  # 並列数
+  num_processes: 4
+  # 使用デバイス: オプションの "cuda" グラフィックス カード推論、"cpu" CPU 推論
+  # このオプションは、get_bert_feature のデフォルトのデバイスも決定します
+  device: "cuda"
+  # 複数デバイス推論を使用する
+  use_multi_device: false
+
+# emo_gen 関連の設定
+# 注意「:」の後にはスペースが必要であることに注意してください。
+emo_gen:
+  # トレーニング データセット設定ファイルのパス
+  config_path: "config.json"
+  # 並列数
+  num_processes: 4
+  # 使用デバイス: オプションの "cuda" グラフィックス カード推論、"cpu" CPU 推論
+  device: "cuda"
+  # 複数デバイス推論を使用する
+  use_multi_device: false
+
+# train 関連の設定
+# 注意「:」の後にはスペースが必要であることに注意してください。
+train_ms:
+  env:
+    MASTER_ADDR: "127.0.0.1"
+    MASTER_PORT: 10086
+    WORLD_SIZE: 1
+    LOCAL_RANK: 0
+    RANK: 0
+    # 環境変数には任意の名前を入力できます
+    # THE_ENV_VAR_YOU_NEED_TO_USE: "1234567"
+  # ベース設定
+  base:
+    use_base_model: false
+    repo_id: "Stardust_minus/Bert-VITS2"
+    model_image: "Bert-VITS2_2.1-Emo底模" # openi Webページのモデル名
+  # トレーニング モデルの保存ディレクトリ: 旧バージョンとの違いは、元のデータ セットは logs/model_name に保存されていましたが、現在は Data/your data set/models に統一されて保存されています。
+  model: "models"
+  # 設定ファイルのパス
+  config_path: "config.json"
+  # トレーニングに使用する worker の数、CPU コアの数を超えることは推奨されません
+  num_workers: 16
+  # これをオフにすると、ディスク容量を 50% 近く節約できますが、実際のトレーニング速度が遅くなり、CPU 使用率が高くなる可能性があります。
+  spec_cache: True
+  # 保存されたチェックポイントの数。スペースを節約するために、この数を超えるウェイトは削除されます。
+  keep_ckpts: 0
+
+
+# webui webui 設定
+# 注意「:」の後にはスペースが必要であることに注意してください。
+webui:
+  # 推論デバイス
+  device: "cpu"
+  # モデルパス
+  model: "models/G_2000.pth"
+  # 設定ファイルのパス
+  config_path: "config.json"
+  # ポート番号
+  port: 7860
+  # 外部ネットへの公開の有無
+  share: false
+  # デバッグモードを有効にするかどうか
+  debug: false
+  # 言語認識ライブラリ、langid か fastlid を選択
+  language_identification_library: "langid"
+
+
+# server-fastapi 設定
+# 注意「:」の後にはスペースが必要であることに注意してください。
+# この構成の下のすべての構成は、ルート ディレクトリに対する相対パスです。
+server:
+  # ポート番号
+  port: 5000
+  # モデルはデフォルトでデバイスを使用しますが、この構成は現在実装されていません。
+  device: "cuda"
+  # ロードする必要があるすべてのモデルの構成については、複数のモデルを入力することも、モデルを入力しないこともできます。Web ページが成功した後にモデルを手動でロードできます。
+  # モデルを読み込まない設定フォーマット、models に [ ] （空のリスト）を割り当てる。speakers が [] の２番めのモデルを参照してください。
+  # すべてのモデルにはモデルへのパスと構成が正しく設定されている必要があることに注意してください。空のパスは読み込みエラーを引き起こします。
+  # モデルを空白のままにし、Web ページが正常に読み込まれた後でモデルを手動で入力することもできます。
+  models:
+    - # モデルパス
+      model: ""
+      # モデル config.json へのパス
+      config: ""
+      # モデルが使用するデバイス。入力するとデフォルトの設定が上書きされます。
+      device: "cuda"
+      # モデルで使用されるデフォルトの言語
+      language: "JP"
+      # モデルキャラクターのデフォルトパラメータ
+      # すべての文字を入力する必要はありません。入力されていない場合はデフォルト値を使用します。
+      # 現時点では記入する必要はありませんが、人による区別設定はまだ実装されていません。
+      speakers:
+        - speaker: "科比"
+          sdp_ratio: 0.2
+          noise_scale: 0.6
+          noise_scale_w: 0.8
+          length_scale: 1
+    - # モデルパス
+      model: ""
+      # モデル config.json へのパス
+      config: ""
+      # モデルが使用するデバイス。入力するとデフォルトの設定が上書きされます。
+      device: "cuda"
+      # モデルで使用されるデフォルトの言語
+      language: "JP"
+      # モデルキャラクターのデフォルトパラメータ
+      # すべての文字を入力する必要はありません。入力されていない場合はデフォルト値を使用します。
+      speakers: [ ] # 空白のままにすることもできます
+
+
+# Baidu 翻訳オープン プラットフォーム API の構成
+# APIアクセスドキュメント https://api.fanyi.baidu.com/doc/21
+# アプリの ID やキーを Github や他の Web サイトで公開しないでください。
+# 注意「:」の後にはスペースが必要であることに注意してください。
+translate:
+  # あなたのAPPID
+  "app_key": ""
+  # 你あなたのキー
+  "secret_key": ""
