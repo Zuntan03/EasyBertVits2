@@ -1,14 +1,14 @@
 ﻿# EasyBertVits2
 
-文章から感情豊かな音声を生成する [Bert-VITS2](https://github.com/fishaudio/Bert-VITS2) を簡単に使えます。
+文章から感情豊かな音声を生成する [Bert-VITS2](https://github.com/fishaudio/Bert-VITS2) を簡単に使えます。<br>主に litagin さんの [Bert-VITS2 (ver 2.1, 2.2) の学習方法（2023-12-01）](https://zenn.dev/litagin/articles/b1ddc1da5ea2b3) を自動化したものです。
 
-サンプル音声： [好き](./doc/sample/v21-suki.wav)、[マッサージ](./doc/sample/v21-massa.wav)、[ごめん](./doc/sample/v21-gomen.wav)、[絶許](./doc/sample/v21-zetuyuru.wav)
+サンプル音声は[こちら](https://twitter.com/Zuntan03/status/1735947687466557733)。
 
 ## インストールと音声の生成
 
 最近のNVIDIA製ビデオカード（VRAM 8GB以上）を搭載した、管理者権限のある Windows PC で動作します。<br>Git や Python は不要です。
 
-1. [Releases](https://github.com/Zuntan03/EasyBertVits2/releases) から [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/raw/v2.1/src/Install-EasyBertVits2.bat)（←を右クリックから保存も可） をダウンロードして、インストール先のフォルダ **（スペースを含まない英数字のみの浅いパス）** で実行します。
+1. [Releases](https://github.com/Zuntan03/EasyBertVits2/releases) から [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/releases/download/v2.1.0/Install-EasyBertVits2.bat)（←を右クリックから保存も可） をダウンロードして、インストール先のフォルダ **（スペースを含まない英数字のみの浅いパス）** で実行します。
 	- **「WindowsによってPCが保護されました」と表示されたら、「詳細表示」から「実行」します。**
 	- ファイルの配布元を `Ctrl + Click` で確認して、問題がなければ `y` と `Enter` を入力してください。
 2. インストールが終わると `Hiyori UI` が Web ブラウザに表示されますので、**ブラウザの翻訳機能で日本語化します**（例はChrome で右クリックから `日本語に翻訳`）。<br>![HiyoriUi](./doc/img/HiyoriUi.png)
