@@ -12,17 +12,16 @@ if not exist %CURL_CMD% (
 set EASY_BERT_VITS2_DIR=EasyBertVits2-2.1
 
 if not exist lib\ ( mkdir lib )
-if not exist lib\%EASY_BERT_VITS2_DIR%\ (
-	%CURL_CMD% -Lo lib\EasyBertVits2.zip^
-		https://github.com/Zuntan03/EasyBertVits2/archive/refs/heads/v2.1.zip
-	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
-	%PS_CMD% Expand-Archive -Path lib\EasyBertVits2.zip -DestinationPath lib -Force
-	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+%CURL_CMD% -Lo lib\EasyBertVits2.zip^
+	https://github.com/Zuntan03/EasyBertVits2/archive/refs/heads/v2.1.zip
+if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
-	del lib\EasyBertVits2.zip
-	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
-)
+%PS_CMD% Expand-Archive -Path lib\EasyBertVits2.zip -DestinationPath lib -Force
+if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+
+del lib\EasyBertVits2.zip
+if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
 robocopy .\lib\%EASY_BERT_VITS2_DIR%\ . /s
 start src\Setup.bat
