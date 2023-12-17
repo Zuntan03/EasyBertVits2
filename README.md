@@ -1,14 +1,21 @@
 ﻿# EasyBertVits2
 
+I haven't tested it in an English environment, but if you have an English model it should work the same way. Maybe.<br>我没有在中文环境中测试过，但是如果你准备一个中文模型，它应该以同样的方式工作。也许吧。
+
 文章から感情豊かな音声を生成する [Bert-VITS2](https://github.com/fishaudio/Bert-VITS2) を簡単に使えます。<br>主に litagin さんの  [Bert-VITS2 (ver 2.1, 2.2) の学習方法（2023-12-01）](https://zenn.dev/litagin/articles/b1ddc1da5ea2b3)を自動化したものです。
 
 サンプル音声は[こちら](https://twitter.com/Zuntan03/status/1735947687466557733)。
 
+## 更新
+
+- litagin さんの [bert_vits2_okiba](https://huggingface.co/litagin/bert_vits2_okiba) から 27種のモデル (18.1GB) をダウンロードする `Download-litagin-bert_vits2_okiba.bat` を追加しました。
+	- [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/releases/download/v2.1.1/Install-EasyBertVits2.bat) を再ダウンロードして、インストール先の `Install-EasyBertVits2.bat` に上書きして再実行で更新できます。
+
 ## インストールと音声の生成
 
-最近のNVIDIA製ビデオカード（VRAM 8GB以上）を搭載した、管理者権限のある Windows PC で動作します。<br>Git や Python は不要です。
+最近のNVIDIA製ビデオカード（VRAM 8GB以上）を搭載した、管理者権限のある Windows PC で動作します。<br>Git や Python は不要です。<br>アバストなどのウィルスチェックソフトが有効だと、インストールに失敗する場合があるようです。
 
-1. [Releases](https://github.com/Zuntan03/EasyBertVits2/releases) から [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/releases/download/v2.1.0/Install-EasyBertVits2.bat)（←を右クリックから保存も可） をダウンロードして、インストール先のフォルダ **（スペースを含まない英数字のみの浅いパス）** で実行します。
+1. [Releases](https://github.com/Zuntan03/EasyBertVits2/releases) から [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/releases/download/v2.1.1/Install-EasyBertVits2.bat)（←を右クリックから保存も可） をダウンロードして、インストール先のフォルダ **（スペースを含まない英数字のみの浅いパス）** で実行します。
 	- **「WindowsによってPCが保護されました」と表示されたら、「詳細表示」から「実行」します。**
 	- ファイルの配布元を `Ctrl + Click` で確認して、問題がなければ `y` と `Enter` を入力してください。
 2. インストールが終わると `Hiyori UI` が Web ブラウザに表示されますので、**ブラウザの翻訳機能で日本語化します**（例はChrome で右クリックから `日本語に翻訳`）。<br>![HiyoriUi](./doc/img/HiyoriUi.png)
@@ -21,10 +28,10 @@
 	- 文章の内容で感情表現が大きく変化します。以下のサンプル文章で生成を試してみてください。
 		- ずっとずっと好きでした! 私とお付き合いしてください。お願いします！
 		- マッサージ、上手いねー。 あっ そうっ!  そこっ!  いい! いい～!!  あああぁぁ～～～～! 
-		- ごめんなさい…本当に許してください…ごめんなさい…もうしません…
-		- 私のことを騙していたのね！絶対に絶対に絶対に許さない！
+		- ごめんなさい…本当に許してください…ごめんなさい…もうしませんkv
 	- `感情` で `0-9` のスタイルを選べますが、動作がいまいち＆旧仕様になるので放置が良さそうです。
 8. どこかから学習済みモデルを入手したのなら、`Bert-VITS2\Data` 以下にフォルダを作成して、`G_*.pth` のモデルと `config.json` の設定ファイルを一緒に置けば同様に読み込めます。
+	- `Download-litagin-bert_vits2_okiba.bat` で [litagin さんの bert_vits2_okiba](https://huggingface.co/litagin/bert_vits2_okiba) からモデルをダウンロードできます。
 
 `Hiyori UI` を再度立ち上げたい場合は、`HiyoriUi.bat` を実行します。
 
@@ -34,8 +41,8 @@
 
 1. `Download-LearningSample-JVNV.bat` を実行すると、`Bert-VITS2\Data` に `JNNV-F2` プロジェクトを作成し、学習用のデータをダウンロードします。
 	- `JNNV-F2` プロジェクトの `audios\raw` に、感情豊かな音声ファイルがありますので、学習用音声の参考にしてください。
-	- `JNNV-F2` プロジェクトの `ilelists\esd.list` で音声の読みとファイルパスを指定していますので、テキストエディタで開いて参考にしてください。
-2. プロジェクトの `Learn.bat` で学習を開始します。<br>しばらく待つと学習結果が `models\G_*.pth` に書き出されますので、`HiyoriUi.bat` で読み込んで学習状況を確認できます。<br>ビデオカードの VRAM が 8GB の場合は、学習中の VRAM 不足を防ぐため、`CPU` で読み込んでください。<br>![HiyoriUiModelCPU](./doc/img/HiyoriUiModelCPU.png)
+	- `JNNV-F2` プロジェクトの `filelists\esd.list` で音声の読みとファイルパスを指定していますので、テキストエディタで開いて参考にしてください。
+2. プロジェクトの `Learn.bat` で学習を開始します。<br>しばらく待つと学習結果が `models\G_*.pth` に書き出されますので、`HiyoriUi.bat` で読み込んで学習状況を確認できます。<br>ビデオカードの VRAM が 8GB の場合は、学習中の VRAM 不足を防ぐために `CPU` で読み込んでください。<br>![HiyoriUiModelCPU](./doc/img/HiyoriUiModelCpu.png)
 
 ## 学習用の音声を長尺の音声ファイルから変換する
 

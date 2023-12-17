@@ -83,7 +83,7 @@ if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 @REM if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
 @REM 2023-12-04
-if not exist Bert-VITS2\Web\ (
+if not exist lib\HiyoriUI-0.6.0\ (
 	%CURL_CMD% -Lo lib\HiyoriUI.zip^
 		https://github.com/jiangyuxiaoxiao/Bert-VITS2-UI/releases/download/0.6.0/HiyoriUI-0.6.0.zip
 	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
