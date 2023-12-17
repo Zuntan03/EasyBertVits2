@@ -77,7 +77,7 @@ pip install torch==2.1.1+cu121 torchvision==0.16.1+cu121 torchaudio==2.1.1+cu121
 	--index-url https://download.pytorch.org/whl/cu121
 if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
-pip install psutil==5.9.3
+pip install psutil==5.9.7
 if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
 pip install -r Bert-VITS2\requirements.txt

@@ -23,7 +23,8 @@ if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 del lib\EasyBertVits2.zip
 if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
-robocopy .\lib\%EASY_BERT_VITS2_DIR%\ . /s
-start src\Setup.bat
+xcopy /QSY .\lib\%EASY_BERT_VITS2_DIR%\ .
+
+call src\Setup.bat
 
 popd rem %~dp0..
