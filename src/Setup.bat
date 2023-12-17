@@ -27,49 +27,61 @@ if /i not "%YES_OR_NO%" == "y" ( popd & exit /b 1 )
 
 if not exist lib\ ( mkdir lib )
 
-if not exist lib\python\ (
-	%CURL_CMD% -o python.zip https://www.python.org/ftp/python/3.10.11/python-3.10.11-embed-amd64.zip
-	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+python -V > NUL
+if %ERRORLEVEL% equ 0 (
+	if not exist Bert-VITS2\venv\ (
+		python -m venv Bert-VITS2\venv
+		if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+	)
+) else (
+	@REM virtualenv は外付けドライブで仮想環境の構築に失敗する
+	if not exist lib\python\ (
+		%CURL_CMD% -o python.zip https://www.python.org/ftp/python/3.10.11/python-3.10.11-embed-amd64.zip
+		if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
-	%PS_CMD% Expand-Archive -Path python.zip -DestinationPath lib\python
-	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+		%PS_CMD% Expand-Archive -Path python.zip -DestinationPath lib\python
+		if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
-	del python.zip
-	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+		del python.zip
+		if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
-	%PS_CMD% "&{(Get-Content 'lib/python/python310._pth') -creplace '#import site', 'import site' | Set-Content 'lib/python/python310._pth' }"
-	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+		%PS_CMD% "&{(Get-Content 'lib/python/python310._pth') -creplace '#import site', 'import site' | Set-Content 'lib/python/python310._pth' }"
+		if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
-	%CURL_CMD% -o lib\python\get-pip.py https://bootstrap.pypa.io/get-pip.py
-	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+		%CURL_CMD% -o lib\python\get-pip.py https://bootstrap.pypa.io/get-pip.py
+		if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
-	lib\python\python.exe lib\python\get-pip.py
-	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+		lib\python\python.exe lib\python\get-pip.py
+		if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
-	lib\python\python.exe -m pip install virtualenv
-	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
-)
+		lib\python\python.exe -m pip install virtualenv
+		if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+	)
 
-if not exist lib\Bert-VITS2-%BERT_VITS2_REV%\ (
-	%CURL_CMD% -Lo Bert-VITS2.zip https://github.com/fishaudio/Bert-VITS2/archive/%BERT_VITS2_REV%.zip
-	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+	if not exist lib\Bert-VITS2-%BERT_VITS2_REV%\ (
+		%CURL_CMD% -Lo Bert-VITS2.zip https://github.com/fishaudio/Bert-VITS2/archive/%BERT_VITS2_REV%.zip
+		if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
-	%PS_CMD% Expand-Archive -Path Bert-VITS2.zip -DestinationPath lib -Force
-	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+		%PS_CMD% Expand-Archive -Path Bert-VITS2.zip -DestinationPath lib -Force
+		if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
-	del Bert-VITS2.zip
-	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+		del Bert-VITS2.zip
+		if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
-	xcopy /QSY lib\Bert-VITS2-%BERT_VITS2_REV%\*.* Bert-VITS2\
-	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
-)
+		xcopy /QSY lib\Bert-VITS2-%BERT_VITS2_REV%\*.* Bert-VITS2\
+		if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+	)
 
-if not exist Bert-VITS2\venv\ (
-	lib\python\python.exe -m virtualenv Bert-VITS2\venv
-	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+	if not exist Bert-VITS2\venv\ (
+		lib\python\python.exe -m virtualenv Bert-VITS2\venv
+		if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+	)
 )
 
 call Bert-VITS2\venv\Scripts\activate.bat
+if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+
+python -m pip install -q --upgrade pip
 if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
 pip install torch==2.1.1+cu121 torchvision==0.16.1+cu121 torchaudio==2.1.1+cu121^

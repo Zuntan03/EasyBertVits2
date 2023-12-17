@@ -13,9 +13,13 @@ I haven't tested it in an English environment, but if you have an English model 
 
 ## インストールと音声の生成
 
-最近のNVIDIA製ビデオカード（VRAM 8GB以上）を搭載した、管理者権限のある Windows PC で動作します。<br>Git や Python は不要です。<br>アバストなどのウィルスチェックソフトが有効だと、インストールに失敗する場合があるようです。
+最近のNVIDIA製ビデオカード（VRAM 8GB以上）を搭載した、管理者権限のある Windows PC で動作します。 
+Git や Python は不要です。 
+アバストなどのウィルスチェックソフトが有効だと、インストールに失敗する場合があるようです。
 
-外付けドライブにインストールしようとすると、以下のエラーが発生するようです。取り急ぎは内蔵ドライブにインストールしてください。
+Pythonにパスが通っていない状態で外付ドライブにインストールしようとすると、以下のエラーが発生します。 
+内蔵ドライブにインストールするか、Python 3.10系をインストールしてパスを通すかで対処してください。
+
 ```
 OSError: [WinError 1] ファンクションが間違っています。: '～\\python310.dll'
 '～\activate.bat' is not recognized as an internal or external command, operabale program or batch file.
