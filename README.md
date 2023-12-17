@@ -6,7 +6,7 @@ I haven't tested it in an English environment, but if you have an English model 
 
 サンプル音声は[こちら](https://twitter.com/Zuntan03/status/1735947687466557733)。
 
-## 更新
+### 2023/12/17
 
 - litagin さんの [bert_vits2_okiba](https://huggingface.co/litagin/bert_vits2_okiba) から 27種のモデル (18.1GB) をダウンロードする `Download-litagin-bert_vits2_okiba.bat` を追加しました。
 	- [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/releases/download/v2.1.1/Install-EasyBertVits2.bat) を再ダウンロードして、インストール先の `Install-EasyBertVits2.bat` に上書きして再実行で更新できます。
