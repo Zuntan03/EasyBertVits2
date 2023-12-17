@@ -15,6 +15,13 @@ I haven't tested it in an English environment, but if you have an English model 
 
 最近のNVIDIA製ビデオカード（VRAM 8GB以上）を搭載した、管理者権限のある Windows PC で動作します。<br>Git や Python は不要です。<br>アバストなどのウィルスチェックソフトが有効だと、インストールに失敗する場合があるようです。
 
+外付けドライブにインストールしようとすると、以下のエラーが発生するようです。取り急ぎは内蔵ドライブにインストールしてください。
+```
+OSError: [WinError 1] ファンクションが間違っています。: '～\\python310.dll'
+'～\activate.bat' is not recognized as an internal or external command, operabale program or batch file.
+Press any key to continue . . .
+```
+
 1. [Releases](https://github.com/Zuntan03/EasyBertVits2/releases) から [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/releases/download/v2.1.1/Install-EasyBertVits2.bat)（←を右クリックから保存も可） をダウンロードして、インストール先のフォルダ **（スペースを含まない英数字のみの浅いパス）** で実行します。
 	- **「WindowsによってPCが保護されました」と表示されたら、「詳細表示」から「実行」します。**
 	- ファイルの配布元を `Ctrl + Click` で確認して、問題がなければ `y` と `Enter` を入力してください。
