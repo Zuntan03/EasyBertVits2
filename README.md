@@ -9,7 +9,7 @@ I haven't tested it in an English environment, but if you have an English model 
 ### 2023/12/17
 
 - litagin さんの [bert_vits2_okiba](https://huggingface.co/litagin/bert_vits2_okiba) から 27種のモデル (18.1GB) をダウンロードする `Download-litagin-bert_vits2_okiba.bat` を追加しました。
-	- [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/releases/download/v2.1.1/Install-EasyBertVits2.bat) を再ダウンロードして、インストール先の `Install-EasyBertVits2.bat` に上書きして再実行で更新できます。
+	- [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/releases/download/v2.1.2/Install-EasyBertVits2.bat) を再ダウンロードして、インストール先の `Install-EasyBertVits2.bat` に上書きして再実行で更新できます。
 
 ## インストールと音声の生成
 
@@ -26,7 +26,7 @@ OSError: [WinError 1] ファンクションが間違っています。: '～\\py
 Press any key to continue . . .
 ```
 
-1. [Releases](https://github.com/Zuntan03/EasyBertVits2/releases) から [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/releases/download/v2.1.1/Install-EasyBertVits2.bat)（←を右クリックから保存も可） をダウンロードして、インストール先のフォルダ **（スペースを含まない英数字のみの浅いパス）** で実行します。
+1. [Releases](https://github.com/Zuntan03/EasyBertVits2/releases) から [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/releases/download/v2.1.2/Install-EasyBertVits2.bat)（←を右クリックから保存も可） をダウンロードして、インストール先のフォルダ **（スペースを含まない英数字のみの浅いパス）** で実行します。
 	- **「WindowsによってPCが保護されました」と表示されたら、「詳細表示」から「実行」します。**
 	- ファイルの配布元を `Ctrl + Click` で確認して、問題がなければ `y` と `Enter` を入力してください。
 2. インストールが終わると `Hiyori UI` が Web ブラウザに表示されますので、**ブラウザの翻訳機能で日本語化します**（例はChrome で右クリックから `日本語に翻訳`）。<br>![HiyoriUi](./doc/img/HiyoriUi.png)
