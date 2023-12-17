@@ -14,7 +14,7 @@ I haven't tested it in an English environment, but if you have an English model 
 ## インストールと音声の生成
 
 最近のNVIDIA製ビデオカード（VRAM 8GB以上）を搭載した、管理者権限のある Windows PC で動作します。 
-Git や Python は不要です。 
+Git は不要で、Python がなければ自動でインストールします。 
 アバストなどのウィルスチェックソフトが有効だと、インストールに失敗する場合があるようです。
 
 Pythonにパスが通っていない状態で外付ドライブにインストールしようとすると、以下のエラーが発生します。 
