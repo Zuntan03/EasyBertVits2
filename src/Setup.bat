@@ -73,6 +73,9 @@ if not exist Bert-VITS2\venv\ (
 call Bert-VITS2\venv\Scripts\activate.bat
 if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
+python -m pip install --upgrade pip
+if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+
 pip install torch==2.1.1+cu121 torchvision==0.16.1+cu121 torchaudio==2.1.1+cu121^
 	--index-url https://download.pytorch.org/whl/cu121
 if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
@@ -141,7 +144,5 @@ if not exist Bert-VITS2\Data\Demo-JVNV\G_JVNV-F2-10000.pth (
 		https://huggingface.co/Zuntan/JVNV-F2_Bert-VITS2_v2.1/resolve/main/G_10000.pth
 	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 )
-
-start HiyoriUi.bat
 
 popd rem %~dp0..

@@ -27,4 +27,6 @@ xcopy /QSY .\lib\%EASY_BERT_VITS2_DIR%\ .
 
 call src\Setup.bat
 
+start HiyoriUi.bat
+
 popd rem %~dp0..
