@@ -17,15 +17,6 @@ I haven't tested it in an English environment, but if you have an English model 
 Git は不要で、Python がなければ自動でインストールします。 
 アバストなどのウィルスチェックソフトが有効だと、インストールに失敗する場合があるようです。
 
-外付ドライブにインストールしようとすると、以下のエラーが発生します。 
-内蔵ドライブにインストールしてください。
-
-```
-OSError: [WinError 1] ファンクションが間違っています。: '～\\python310.dll'
-'～\activate.bat' is not recognized as an internal or external command, operabale program or batch file.
-Press any key to continue . . .
-```
-
 1. [Releases](https://github.com/Zuntan03/EasyBertVits2/releases) から [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/releases/download/v2.1.2/Install-EasyBertVits2.bat)（←を右クリックから保存も可） をダウンロードして、インストール先のフォルダ **（スペースを含まない英数字のみの浅いパス）** で実行します。
 	- **「WindowsによってPCが保護されました」と表示されたら、「詳細表示」から「実行」します。**
 	- ファイルの配布元を `Ctrl + Click` で確認して、問題がなければ `y` と `Enter` を入力してください。

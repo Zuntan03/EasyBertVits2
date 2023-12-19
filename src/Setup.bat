@@ -65,8 +65,7 @@ if not exist lib\Bert-VITS2-%BERT_VITS2_REV%\ (
 )
 
 if not exist Bert-VITS2\venv\ (
-	@REM virtualenv は外付けドライブで仮想環境の構築に失敗する
-	lib\python\python.exe -m virtualenv Bert-VITS2\venv
+	lib\python\python.exe -m virtualenv --copies Bert-VITS2\venv
 	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 )
 
