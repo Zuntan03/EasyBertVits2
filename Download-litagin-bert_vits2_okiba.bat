@@ -2,7 +2,7 @@
 chcp 65001 > NUL
 
 
-echo 以下の配布元からモデルファイル (18.1GB) をダウンロードします（URL を Ctrl + クリックで開けます）。
+echo 以下の配布元からモデルファイル (5.2GB) をダウンロードします（URL を Ctrl + クリックで開けます）。
 echo https://huggingface.co/litagin/bert_vits2_okiba
 echo よろしいですか？ [y/n]
 set /p YES_OR_NO=
@@ -10,115 +10,115 @@ if /i not "%YES_OR_NO%" == "y" ( popd & exit /b 1 )
 
 set CURL_CMD=C:\Windows\System32\curl.exe
 
-set DEST_DIR=%~dp0Bert-VITS2\Data\litagin-bert_vits2_okiba
+set DEST_DIR=%~dp0Bert-VITS2\Data\litagin-bert_vits2_okiba-ver2.1
 
 call :DOWNLOAD A^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/A/G_7000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/A/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/A/G_7000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/A/config.json
 
 call :DOWNLOAD B^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/B/G_9000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/B/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/B/G_9000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/B/config.json
 
 call :DOWNLOAD C^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/C/G_8000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/C/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/C/G_8000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/C/config.json
 
 call :DOWNLOAD D^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/D/G_9000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/D/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/D/G_9000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/D/config.json
 
 call :DOWNLOAD E^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/E/G_5000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/E/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/E/G_5000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/E/config.json
 
 call :DOWNLOAD F^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/F/G_5000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/F/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/F/G_5000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/F/config.json
 
 call :DOWNLOAD G^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/G/G_8000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/G/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/G/G_8000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/G/config.json
 
 call :DOWNLOAD H^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/H/G_5000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/H/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/H/G_5000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/H/config.json
 
 call :DOWNLOAD I^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/I/G_10000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/I/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/I/G_10000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/I/config.json
 
 call :DOWNLOAD J^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/J/G_4000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/J/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/J/G_4000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/J/config.json
 
 call :DOWNLOAD K^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/K/G_5000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/K/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/K/G_5000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/K/config.json
 
 call :DOWNLOAD L^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/L/G_8000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/L/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/L/G_8000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/L/config.json
 
 call :DOWNLOAD M^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/M/G_4000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/M/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/M/G_4000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/M/config.json
 
 call :DOWNLOAD N^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/N/G_5000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/N/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/N/G_5000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/N/config.json
 
 call :DOWNLOAD O^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/O/G_8000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/O/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/O/G_8000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/O/config.json
 
 call :DOWNLOAD P^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/P/G_2000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/P/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/P/G_2000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/P/config.json
 
 call :DOWNLOAD Q^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/Q/G_5000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/Q/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/Q/G_5000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/Q/config.json
 
 call :DOWNLOAD R^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/R/G_6000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/R/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/R/G_6000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/R/config.json
 
 call :DOWNLOAD S^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/S/G_13000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/S/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/S/G_13000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/S/config.json
 
 call :DOWNLOAD T^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/T/G_10000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/T/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/T/G_10000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/T/config.json
 
 call :DOWNLOAD U^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/U/G_12000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/U/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/U/G_12000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/U/config.json
 
 call :DOWNLOAD V^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/V/G_8000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/V/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/V/G_8000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/V/config.json
 
 call :DOWNLOAD W^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/W/G_8000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/W/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/W/G_8000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/W/config.json
 
 call :DOWNLOAD X^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/X/G_5000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/X/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/X/G_5000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/X/config.json
 
 call :DOWNLOAD Y^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/Y/G_8000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/Y/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/Y/G_8000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/Y/config.json
 
 call :DOWNLOAD Z^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/Z/G_12000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/Z/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/Z/G_12000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/Z/config.json
 
 call :DOWNLOAD man-A^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/man-A/G_5000.pth^
-	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/man-A/config.json
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/man-A/G_5000_release.pth^
+	https://huggingface.co/litagin/bert_vits2_okiba/resolve/main/ver2.1/man-A/config.json
 
 exit /b 0
 
