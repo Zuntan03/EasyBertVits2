@@ -17,9 +17,6 @@ if not exist %~dp0audios\wavs (
 
 	python bert_gen.py
 	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
-
-	python emo_gen.py
-	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 )
 
 python train_ms.py

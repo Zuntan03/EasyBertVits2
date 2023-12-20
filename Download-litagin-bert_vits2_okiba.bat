@@ -1,7 +1,6 @@
 @echo off
 chcp 65001 > NUL
 
-
 echo 以下の配布元からモデルファイル (5.2GB) をダウンロードします（URL を Ctrl + クリックで開けます）。
 echo https://huggingface.co/litagin/bert_vits2_okiba
 echo よろしいですか？ [y/n]

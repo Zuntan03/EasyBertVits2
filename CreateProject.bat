@@ -35,13 +35,16 @@ if not exist %BASE_PATH%\filelists\esd.list (
 
 if not exist "%BASE_PATH%\models" ( mkdir "%BASE_PATH%\models" )
 if not exist "%BASE_PATH%\models\DUR_0.pth" (
-	copy lib\bert-vits2_base_model-2.1\DUR_0.pth "%BASE_PATH%\models\DUR_0.pth" > NUL
+	copy lib\Bert-VITS2-2.3\DUR_0.pth "%BASE_PATH%\models\DUR_0.pth" > NUL
 )
 if not exist "%BASE_PATH%\models\D_0.pth" (
-	copy lib\bert-vits2_base_model-2.1\D_0.pth "%BASE_PATH%\models\D_0.pth" > NUL
+	copy lib\Bert-VITS2-2.3\D_0.pth "%BASE_PATH%\models\D_0.pth" > NUL
 )
 if not exist "%BASE_PATH%\models\G_0.pth" (
-	copy lib\bert-vits2_base_model-2.1\G_0.pth "%BASE_PATH%\models\G_0.pth" > NUL
+	copy lib\Bert-VITS2-2.3\G_0.pth "%BASE_PATH%\models\G_0.pth" > NUL
+)
+if not exist "%BASE_PATH%\models\WD_0.pth" (
+	copy lib\Bert-VITS2-2.3\WD_0.pth "%BASE_PATH%\models\WD_0.pth" > NUL
 )
 
 if not exist "%BASE_PATH%\models\G_WebUi.bat" ( copy src\G_WebUi.bat "%BASE_PATH%\models\G_WebUi.bat" > NUL )

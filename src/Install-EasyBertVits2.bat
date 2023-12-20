@@ -9,12 +9,12 @@ if not exist %CURL_CMD% (
 	pause & popd & exit /b 1
 )
 
-set EASY_BERT_VITS2_DIR=EasyBertVits2-2.1
+set EASY_BERT_VITS2_DIR=EasyBertVits2-main
 
 if not exist lib\ ( mkdir lib )
 
 %CURL_CMD% -Lo lib\EasyBertVits2.zip^
-	https://github.com/Zuntan03/EasyBertVits2/archive/refs/heads/v2.1.zip
+	https://github.com/Zuntan03/EasyBertVits2/archive/refs/heads/main.zip
 if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 
 %PS_CMD% Expand-Archive -Path lib\EasyBertVits2.zip -DestinationPath lib -Force

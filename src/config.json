@@ -11,14 +11,19 @@
     ],
     "eps": 1e-09,
     "batch_size": 3,
-    "fp16_run": false,
+    "bf16_run": true,
     "lr_decay": 0.99995,
     "segment_size": 16384,
     "init_lr_ratio": 1,
     "warmup_epochs": 0,
     "c_mel": 45,
     "c_kl": 1.0,
-    "skip_optimizer": true
+    "c_commit": 100,
+    "skip_optimizer": true,
+    "freeze_ZH_bert": false,
+    "freeze_JP_bert": false,
+    "freeze_EN_bert": false,
+    "freeze_emo": false
   },
   "data": {
     "training_files": "filelists/train.list",
@@ -32,7 +37,7 @@
     "mel_fmin": 0.0,
     "mel_fmax": null,
     "add_blank": true,
-    "n_speakers": 896,
+    "n_speakers": 850,
     "cleaned_text": true,
     "spk2id": {}
   },
@@ -88,7 +93,14 @@
     ],
     "n_layers_q": 3,
     "use_spectral_norm": false,
-    "gin_channels": 256
+    "gin_channels": 512,
+    "slm": {
+      "model": "./slm/wavlm-base-plus",
+      "sr": 16000,
+      "hidden": 768,
+      "nlayers": 13,
+      "initial_channel": 64
+    }
   },
-  "version": "2.1"
+  "version": "2.3"
 }

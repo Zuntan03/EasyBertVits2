@@ -35,8 +35,8 @@ preprocess_text:
   val_path: "filelists/val.list"
   # 設定ファイルのパス
   config_path: "config.json"
-  # 各話者の検証セットエントリの数
-  val_per_spk: 4
+  # 各言語の検証セットエントリの数
+  val_per_lang: 4
   # 検証セット内のエントリの最大数。それ以上のエントリがあるものは切り捨てられ、トレーニング セットに配置されます。
   max_val_total: 12
   # データクリーニングを行うかどうか
@@ -83,7 +83,7 @@ train_ms:
   base:
     use_base_model: false
     repo_id: "Stardust_minus/Bert-VITS2"
-    model_image: "Bert-VITS2_2.1-Emo底模" # openi Webページのモデル名
+    model_image: "Bert-VITS2_2.3底模" # openi Webページのモデル名
   # トレーニング モデルの保存ディレクトリ: 旧バージョンとの違いは、元のデータ セットは logs/model_name に保存されていましたが、現在は Data/your data set/models に統一されて保存されています。
   model: "models"
   # 設定ファイルのパス
@@ -100,7 +100,7 @@ train_ms:
 # 注意「:」の後にはスペースが必要であることに注意してください。
 webui:
   # 推論デバイス
-  device: "cpu"
+  device: "cuda"
   # モデルパス
   model: "models/G_2000.pth"
   # 設定ファイルのパス
