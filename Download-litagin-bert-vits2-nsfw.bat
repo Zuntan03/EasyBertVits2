@@ -1,7 +1,7 @@
 @echo off
 chcp 65001 > NUL
 
-echo 以下の配布元からモデルファイル (5.2GB) をダウンロードします（URL を Ctrl + クリックで開けます）。
+echo 以下の配布元からモデルファイル (1.5GB) をダウンロードします（URL を Ctrl + クリックで開けます）。
 echo https://huggingface.co/litagin/bert-vits2-nsfw
 echo よろしいですか？ [y/n]
 set /p YES_OR_NO=
