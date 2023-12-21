@@ -18,6 +18,8 @@ echo https://github.com/pypa/get-pip
 echo https://github.com/fishaudio/Bert-VITS2/
 echo https://github.com/jiangyuxiaoxiao/Bert-VITS2-UI
 echo https://huggingface.co/OedoSoldier/Bert-VITS2-2.3
+echo https://huggingface.co/audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim/
+echo https://huggingface.co/microsoft/wavlm-base-plus/
 echo https://sites.google.com/site/shinnosuketakamichi/research-topics/jvnv_corpus
 echo https://github.com/Zuntan03/JVNV-F2_Bert-VITS2
 echo https://huggingface.co/Zuntan/JVNV-F2_Bert-VITS2_v2.1
@@ -92,6 +94,12 @@ if not exist lib\Bert-VITS2-2.3\G_0.pth (
 if not exist lib\Bert-VITS2-2.3\WD_0.pth (
 	%CURL_CMD% -Lo lib\Bert-VITS2-2.3\WD_0.pth^
 		https://huggingface.co/OedoSoldier/Bert-VITS2-2.3/resolve/main/WD_0.pth
+	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
+)
+
+if not exist Bert-VITS2\emotional\wav2vec2-large-robust-12-ft-emotion-msp-dim\pytorch_model.bin (
+	%CURL_CMD% -Lo Bert-VITS2\emotional\wav2vec2-large-robust-12-ft-emotion-msp-dim\pytorch_model.bin^
+		https://huggingface.co/audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim/resolve/main/pytorch_model.bin
 	if %errorlevel% neq 0 ( pause & popd & exit /b %errorlevel% )
 )
 
