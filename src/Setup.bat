@@ -3,8 +3,8 @@ chcp 65001 > NUL
 pushd %~dp0..
 set PS_CMD=PowerShell -Version 5.1 -ExecutionPolicy Bypass
 
-@REM 2023-12-19
-set BERT_VITS2_REV=7ebc1aa28a055608f7e31da93928cf295fdffeba
+@REM 2023-12-22
+set BERT_VITS2_REV=3090f5837d943b758dc07ff900c35734fc0b793a
 
 set CURL_CMD=C:\Windows\System32\curl.exe
 if not exist %CURL_CMD% (
