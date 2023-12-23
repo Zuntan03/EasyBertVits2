@@ -20,6 +20,7 @@ Git は不要で、Python がなければ自動でインストールします。
 1. [Releases](https://github.com/Zuntan03/EasyBertVits2/releases) から [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/releases/download/v2.1.2/Install-EasyBertVits2.bat)（←を右クリックから保存も可） をダウンロードして、インストール先のフォルダ **（スペースを含まない英数字のみの浅いパス）** で実行します。
 	- **「WindowsによってPCが保護されました」と表示されたら、「詳細表示」から「実行」します。**
 	- ファイルの配布元を `Ctrl + Click` で確認して、問題がなければ `y` と `Enter` を入力してください。
+	- Bert-VITS2 v2.3に仮対応したものは [こちらの Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/raw/main/src/Install-EasyBertVits2.bat) を右クリックから `名前をつけてリンク先を保存` してください。
 2. インストールが終わると `Hiyori UI` が Web ブラウザに表示されますので、**ブラウザの翻訳機能で日本語化します**（例はChrome で右クリックから `日本語に翻訳`）。<br>![HiyoriUi](./doc/img/HiyoriUi.png)
 3. 右上の `モデルのロード` の下の欄をクリックして、[JVNV](https://sites.google.com/site/shinnosuketakamichi/research-topics/jvnv_corpus) の学習済みモデル `G_JVNV-F2-10000.pth` を選択します。<br>![HiyoriUiModel](./doc/img/HiyoriUiModel.png)
 	- `Download-DemoModel.bat` で学習ステップ数の異なるモデルを追加でダウンロードできます。<br>複数のモデルを選択して、生成された音声を聴き比べることもできます。
