@@ -1,5 +1,7 @@
 ﻿# EasyBertVits2
 
+# litagin さんの [Style-Bert-VITS2](https://github.com/litagin02/Style-Bert-VITS2) を使ったほうが幸せになれそうです。
+
 I haven't tested it in an English environment, but if you have an English model it should work the same way. Maybe.<br>我没有在中文环境中测试过，但是如果你准备一个中文模型，它应该以同样的方式工作。也许吧。
 
 文章から感情豊かな音声を生成する [Bert-VITS2](https://github.com/fishaudio/Bert-VITS2) を簡単に使えます。<br>主に litagin さんの  [Bert-VITS2 (ver 2.1, 2.2) の学習方法（2023-12-01）](https://zenn.dev/litagin/articles/b1ddc1da5ea2b3)を自動化したものです。
