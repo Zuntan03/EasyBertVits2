@@ -6,10 +6,10 @@ I haven't tested it in an English environment, but if you have an English model 
 
 サンプル音声は[こちら](https://twitter.com/Zuntan03/status/1735947687466557733)。
 
-### 2023/12/17
+<!-- ### 2023/12/17
 
 - litagin さんの [bert_vits2_okiba](https://huggingface.co/litagin/bert_vits2_okiba) から 27種のモデル (18.1GB) をダウンロードする `Download-litagin-bert_vits2_okiba.bat` を追加しました。
-	- [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/releases/download/v2.1.2/Install-EasyBertVits2.bat) を再ダウンロードして、インストール先の `Install-EasyBertVits2.bat` に上書きして再実行で更新できます。
+	- [Install-EasyBertVits2.bat](https://github.com/Zuntan03/EasyBertVits2/releases/download/v2.1.2/Install-EasyBertVits2.bat) を再ダウンロードして、インストール先の `Install-EasyBertVits2.bat` に上書きして再実行で更新できます。 -->
 
 ## インストールと音声の生成
 
@@ -33,7 +33,7 @@ Git は不要で、Python がなければ自動でインストールします。
 		- ごめんなさい…本当に許してください…ごめんなさい…もうしませんkv
 	- `感情` で `0-9` のスタイルを選べますが、動作がいまいち＆旧仕様になるので放置が良さそうです。
 8. どこかから学習済みモデルを入手したのなら、`Bert-VITS2\Data` 以下にフォルダを作成して、`G_*.pth` のモデルと `config.json` の設定ファイルを一緒に置けば同様に読み込めます。
-	- `Download-litagin-bert_vits2_okiba.bat` で [litagin さんの bert_vits2_okiba](https://huggingface.co/litagin/bert_vits2_okiba) からモデルをダウンロードできます。
+	<!-- - `Download-litagin-bert_vits2_okiba.bat` で [litagin さんの bert_vits2_okiba](https://huggingface.co/litagin/bert_vits2_okiba) からモデルをダウンロードできます。 -->
 
 `Hiyori UI` を再度立ち上げたい場合は、`HiyoriUi.bat` を実行します。
 
